@@ -1,0 +1,97 @@
+:root {
+  --primary: #3B82F6;
+  --secondary: #10B981;
+  --bg: #FFF9F0;
+  --text: #333;
+  --light: #FFF;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0 20px 40px;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid var(--primary);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: var(--primary);
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+.section {
+  margin: 40px 0;
+}
+
+h2 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+form button {
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: var(--secondary);
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #EEE;
+  margin-top: 60px;
+}
