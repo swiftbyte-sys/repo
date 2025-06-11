@@ -42,17 +42,43 @@ body {
 }
 
 .nav {
-  display: flex;
-  gap: 10px;
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden off screen */
+  width: 250px;
+  height: 100vh;
   background-color: #f8f8f8;
-  justify-content: center;
-  padding: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 60px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
-/* Links */
+/* Show the nav sliding in */
+.nav.show {
+  right: 0;
+}
+
+/* Hamburger button styles */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+  display: block;
+}
+
+/* Nav links */
 .nav-link {
-  padding: 10px 15px;
+  padding: 15px 20px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -62,17 +88,6 @@ body {
 
 .nav-link:hover {
   background-color: #eee;
-}
-
-/* Hamburger button (mobile only) */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  padding: 10px;
 }
 
 h2 {
@@ -154,13 +169,19 @@ form button:hover {
 
 /* Show full nav and hide hamburger on larger screens */
 @media (min-width: 769px) {
-  .nav {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
   .hamburger {
     display: none;
   }
+  .nav {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    box-shadow: none;
+    padding-top: 0;
+    right: 0 !important;
+    transition: none;
+    display: flex !important;
+  }
 }
+
