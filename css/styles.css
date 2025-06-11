@@ -33,11 +33,12 @@ body {
 }
 
 .logo-img {
-  width: 120px;  /* Set your preferred width */
-  height: auto; 
-  vertical-align: middle;
+  width: 25vw;            /* 25% of the viewport width (responsive) */
+  max-width: 150px;       /* Don't let it get too big */
+  min-width: 80px;        /* Ensures it's still visible on small screens */
+  height: auto;
   object-fit: contain;
-  display: block; 
+  display: block;
 }
 
 .nav {
@@ -105,4 +106,16 @@ form button:hover {
   color: #666;
   border-top: 1px solid #EEE;
   margin-top: 60px;
+}
+
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 35vw;
+    min-width: 70px;
+  }
+
+  .logo {
+    font-size: 1em;
+  }
 }
