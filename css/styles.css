@@ -245,4 +245,19 @@ footer.footer {
   .hamburger {
     display: none; /* hide hamburger on desktop */
   }
+  
+  .logo-img {
+    max-width: 120px; /* smaller max width for desktop */
+    max-height: 40px; /* keep height consistent with header */
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }  
 }
