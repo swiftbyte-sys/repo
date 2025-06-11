@@ -1,38 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Contact form handler
-  document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    alert('Thank you for contacting SwiftByte! We will get back to you soon.');
-    this.reset();
-  });
+// script.js
 
-  // Navigation toggle elements
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  alert('Thanks for booking a demo with SwiftByte! We will contact you soon.');
+  this.reset();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
-  const closeBtn = document.getElementById('closeBtn');
-  const overlay = document.getElementById('overlay');
 
-  // Open navigation
-  function openMenu() {
-    navMenu.classList.add('show');
-    overlay.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
-  }
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
 
-  // Close navigation
-  function closeMenu() {
-    navMenu.classList.remove('show');
-    overlay.classList.remove('show');
-    document.body.style.overflow = ''; // Restore scroll
-  }
-
-  // Event bindings
-  hamburger.addEventListener('click', openMenu);
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  if (overlay) overlay.addEventListener('click', closeMenu);
-
-  // Optional: Close nav with ESC key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
+  const reserveBtn = document.getElementById('reserveBtn');
+  reserveBtn.addEventListener('click', () => {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   });
 });
