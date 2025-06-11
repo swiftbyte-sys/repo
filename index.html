@@ -3,46 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SwiftByte | Restaurant & Tech Fusion</title>
+  <title>SwiftByte | Restaurant Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="header compact">
+  <header class="header">
     <div class="logo">
-      <img src="images/logo1.png" alt="SwiftByte Logo" class="logo-img" />
+      <img src="images/logo1.png" alt="SwiftByte Logo" />
       <span>SwiftByte</span>
     </div>
     <button class="hamburger" id="hamburger">☰</button>
     <nav class="nav" id="navMenu">
       <a href="#home" class="nav-link">Home</a>
-      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="#platform" class="nav-link">Platform</a>
       <a href="#demo" class="nav-link">Demo</a>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero redesigned">
-      <h1>Powering Restaurants with Smart Software</h1>
-      <p>SwiftByte offers all-in-one tech tools to boost efficiency and customer delight in your restaurant.</p>
-      <button id="reserveBtn" class="cta">Try a Live Demo</button>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Smart Software for Modern Restaurants</h1>
+        <p>Streamline operations, enhance customer experience, and grow your business with SwiftByte.</p>
+        <button class="cta" id="reserveBtn">Get a Free Demo</button>
+      </div>
     </section>
 
-    <section id="solutions" class="section">
-      <h2>Restaurant-Centric Features</h2>
-      <div class="features-grid">
+    <section id="features" class="section">
+      <h2>Key Features</h2>
+      <div class="features">
         <div class="feature">
-          <h3>Live Table Booking</h3>
-          <p>Real-time reservations integrated with your floor plan.</p>
+          <h3>Table Reservations</h3>
+          <p>Customers can book online anytime. You stay in control.</p>
         </div>
         <div class="feature">
-          <h3>Smart POS</h3>
-          <p>Fast, intuitive, and cloud-connected point of sale.</p>
+          <h3>Digital Menus</h3>
+          <p>Update menus instantly, sync across devices and platforms.</p>
         </div>
         <div class="feature">
-          <h3>Customer Analytics</h3>
-          <p>Track habits and offer tailored promotions.</p>
+          <h3>Insights Dashboard</h3>
+          <p>Real-time data for smarter decisions and happy customers.</p>
         </div>
       </div>
     </section>
@@ -50,32 +52,32 @@
     <section id="platform" class="section dark">
       <h2>Our Platform</h2>
       <ul>
-        <li>Unified Dashboard for Orders & Inventory</li>
-        <li>Mobile App for Staff & Management</li>
-        <li>Seamless Integration with Delivery Apps</li>
-        <li>Auto Menu Sync with Changes</li>
+        <li>Order & Inventory Dashboard</li>
+        <li>Mobile Tools for Staff</li>
+        <li>Delivery App Integration</li>
+        <li>Instant Sync Across Devices</li>
       </ul>
     </section>
 
     <section id="demo" class="section">
-      <h2>Book Your Demo</h2>
+      <h2>Book a Demo</h2>
       <form id="contact-form">
-        <label for="name">Full Name</label>
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Business Email</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" required />
 
-        <label for="message">Tell Us About Your Restaurant</label>
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Request Demo</button>
+        <button type="submit">Submit</button>
       </form>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 SwiftByte. Restaurant Software, Reimagined.</p>
+    <p>&copy; 2025 SwiftByte. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
