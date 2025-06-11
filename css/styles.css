@@ -41,24 +41,61 @@ body {
   display: block;
 }
 
+/* Overlay background dim when nav is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Nav container */
 .nav {
   position: fixed;
   top: 0;
-  right: -250px; /* Hidden off screen */
-  width: 250px;
+  right: -280px; /* Hidden off screen */
+  width: 280px;
   height: 100vh;
   background-color: #f8f8f8;
   flex-direction: column;
-  padding-top: 60px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px 20px 20px;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
+  border-radius: 8px 0 0 8px;
 }
 
 /* Show the nav sliding in */
 .nav.show {
   right: 0;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+.close-btn:hover {
+  color: #ff5252;
 }
 
 /* Hamburger button styles */
@@ -81,13 +118,30 @@ body {
   padding: 15px 20px;
   text-decoration: none;
   color: #333;
-  font-weight: 500;
-  border-radius: 5px;
-  transition: background 0.2s;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  display: block;
+  font-size: 18px;
+  user-select: none;
 }
 
+/* Hover effect: background color + slight scale + shadow */
 .nav-link:hover {
-  background-color: #eee;
+  background-color: #f0f8ff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.25);
+  color: var(--secondary);
+}
+
+/* Active link style: colored border */
+.nav-link.active {
+  border-left: 4px solid var(--secondary);
+  padding-left: 16px;
+  color: var(--secondary);
+  font-weight: 700;
 }
 
 h2 {
@@ -137,7 +191,6 @@ form button:hover {
   margin-top: 60px;
 }
 
-
 @media (max-width: 480px) {
   .logo-img {
     width: 35vw;
@@ -149,21 +202,15 @@ form button:hover {
   }
 }
 
+/* On mobile, hide default nav and show hamburger */
 @media (max-width: 768px) {
   .nav {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f8f8;
-    width: 100%;
-  }
-
-  .nav.show {
-    display: flex; /* Shown when toggled */
+    /* overridden by fixed positioning and transition above */
+    display: flex !important; /* We keep nav always display:flex, control visibility by position */
   }
 
   .hamburger {
-    display: block; /* Show on mobile */
+    display: block;
   }
 }
 
@@ -182,6 +229,32 @@ form button:hover {
     right: 0 !important;
     transition: none;
     display: flex !important;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 0;
+    border-left: none;
+    color: var(--text);
+  }
+
+  .nav-link:hover {
+    background-color: transparent;
+    color: var(--secondary);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .nav-link.active {
+    border-left: none;
+    font-weight: 600;
+    color: var(--secondary);
   }
 }
-
