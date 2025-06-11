@@ -36,6 +36,8 @@ body {
   width: 120px;  /* Set your preferred width */
   height: auto; 
   vertical-align: middle;
+  object-fit: contain;
+  display: block; 
 }
 
 .nav {
