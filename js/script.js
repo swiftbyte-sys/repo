@@ -1,5 +1,4 @@
-// Toggle mobile nav menu
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
 
@@ -7,17 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
     navMenu.classList.toggle('show');
   });
 
-  // Optional: Close menu on link click (for better mobile UX)
-  document.querySelectorAll('.nav-link').forEach(link => {
+  // Close nav menu when clicking any nav link (on mobile)
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('show');
     });
   });
 
-  // Handle form submission
-  document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+  // Form submission alert
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
     alert('Thanks for requesting a demo. We’ll contact you soon!');
-    this.reset();
+    e.target.reset();
   });
 });
