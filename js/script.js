@@ -7,10 +7,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.getElementById("navMenu");
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
 });
