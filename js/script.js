@@ -187,3 +187,7 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+document.getElementById('reserveBtn').addEventListener('click', function () {
+    window.location.href = 'https://swiftbyte-sys.github.io/issa-resto-menu/#'; // Replace with your target link
+  });
