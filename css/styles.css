@@ -33,8 +33,8 @@ body {
 }
 
 .logo-img {
-  height: 4px; /* adjust as needed */
-  width: 4px;
+  width: 120px;  /* Set your preferred width */
+  height: auto; 
   vertical-align: middle;
 }
 
