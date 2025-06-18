@@ -178,15 +178,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Service worker registration for PWA
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
-      console.log('ServiceWorker registration successful');
-    }).catch(err => {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
+//if ('serviceWorker' in navigator) {
+ // window.addEventListener('load', () => {
+  //  navigator.serviceWorker.register('/sw.js').then(registration => {
+    //  console.log('ServiceWorker registration successful');
+   // }).catch(err => {
+  //    console.log('ServiceWorker registration failed: ', err);
+  //  });
+//  });
+//}
 
 document.getElementById('reserveBtn').addEventListener('click', function () {
     window.location.href = 'https://swiftbyte-sys.github.io/issa-resto-menu/#'; // Replace with your target link
