@@ -199,18 +199,23 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   const form = e.target;
   const data = new FormData(form);
 
-  const response = await fetch('https://formspree.io/f/xldnlllj', {
-    method: 'POST',
-    body: data,
-    headers: {
-      'Accept': 'application/json'
-    }
-  });
+  try {
+    const response = await fetch('https://formspree.io/f/xldnlllj', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-  if (response.ok) {
-    document.getElementById('popup').style.display = 'block';
-    form.reset();
-  } else {
-    alert("There was a problem submitting your form. Please try again.");
+    if (response.ok) {
+      document.getElementById('popup').style.display = 'block';
+      form.reset();
+    } else {
+      const err = await response.json();
+      alert(err.message || "There was a problem submitting your form.");
+    }
+  } catch (error) {
+    alert("Network error. Please check your connection and try again.");
   }
 });
