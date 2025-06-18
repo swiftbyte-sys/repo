@@ -229,3 +229,10 @@ if (!validateEmail(formData.email)) {
   alert('Please enter a valid email address');
   return; // Stop submission
 }
+
+setTimeout(() => {
+  const popup = document.getElementById('popup');
+  if (popup) {
+    popup.style.display = 'none';  // hides the popup
+  }
+}, 3000);
