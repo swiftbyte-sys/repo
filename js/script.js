@@ -219,3 +219,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     alert("Network error. Please check your connection and try again.");
   }
 });
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+if (!validateEmail(formData.email)) {
+  alert('Please enter a valid email address');
+  return; // Stop submission
+}
