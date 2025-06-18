@@ -191,3 +191,26 @@ if ('serviceWorker' in navigator) {
 document.getElementById('reserveBtn').addEventListener('click', function () {
     window.location.href = 'https://swiftbyte-sys.github.io/issa-resto-menu/#'; // Replace with your target link
   });
+
+
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  const response = await fetch('https://formspree.io/f/xldnlllj', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.getElementById('popup').style.display = 'block';
+    form.reset();
+  } else {
+    alert("There was a problem submitting your form. Please try again.");
+  }
+});
