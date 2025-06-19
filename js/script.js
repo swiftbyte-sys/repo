@@ -82,30 +82,34 @@
 
   // Form submission with confirmation popup
   const contactForm = document.getElementById('contact-form');
-  const confirmationPopup = document.getElementById('confirmation-popup');
+  const popup = document.getElementById('popup');
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const formData = new FormData(contactForm);
+    // Only proceed if form is valid
+    if (contactForm.checkValidity()) {
+      const formData = new FormData(contactForm);
 
-    fetch(contactForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' },
-    })
-    .then(response => {
-      if (response.ok) {
-        confirmationPopup.classList.add('show');
-        contactForm.reset();
-
-        setTimeout(() => {
-          confirmationPopup.classList.remove('show');
-        }, 3000);
-      } else {
-        alert('Oops! There was a problem submitting your form.');
-      }
-    })
-    .catch(() => alert('Oops! There was a problem submitting your form.'));
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+        .then(response => {
+          if (response.ok) {
+            popup.style.display = 'block';
+            contactForm.reset();
+          } else {
+            alert('There was an error submitting the form. Please try again.');
+          }
+        })
+        .catch(() => {
+          alert('There was a problem sending your request.');
+        });
+    } else {
+      contactForm.reportValidity();
+    }
   });
-
