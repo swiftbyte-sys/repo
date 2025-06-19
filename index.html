@@ -139,28 +139,30 @@
           </ul>
         </div>
         <div class="cta-form" data-aos="fade-left">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="restaurant">Restaurant Name</label>
-              <input type="text" id="restaurant" name="restaurant" required />
-            </div>
-            <div class="form-group">
-              <label for="message">How can we help you?</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="cta primary">
-              <i class="fas fa-calendar-alt"></i> Book Demo
-            </button>
-          </form>
-        <div id="popup" style="display: none; background: #10B981; color: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+          <form id="contact-form" action="https://formspree.io/f/mzzgvlwj" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+  <div class="form-group">
+    <label for="restaurant">Restaurant Name</label>
+    <input type="text" id="restaurant" name="restaurant" required />
+  </div>
+  <div class="form-group">
+    <label for="message">How can we help you?</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="cta primary">
+    <i class="fas fa-calendar-alt"></i> Book Demo
+  </button>
+</form>
+
+<!-- Popup message -->
+<div id="popup" style="display: none; background: #10B981; color: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
   Thank you! We’ll get back to you soon.
 </div>
           </div>
